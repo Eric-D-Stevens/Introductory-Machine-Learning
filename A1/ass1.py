@@ -1,3 +1,4 @@
+
 import numpy as np
 import random as rand
 import matplotlib.pyplot as plt
@@ -31,7 +32,7 @@ def weight_vector(X,Y):
 
 def no_dummy(X):
 	#Xc = X.copy()
-	X=X[:,:13]
+	X=X[:,:X.shape[1]-1]
 	return X
 
 def sum_sq_err(W,X,Y):
@@ -47,10 +48,6 @@ def add_feature(X,a):
 	X = np.append(X,feat,axis=1 )
 	return X
 
-def quick_sse(X,Y):
-	W = weight_vector(X,Y)
-	E = sum_sq_err(W,X,Y)
-	return [W,E]
 
 def feature_relationships(numOfFeats):
 
@@ -83,7 +80,6 @@ def feature_relationships(numOfFeats):
 		num_feat.append(feats)
 		List_SSE.append(SSE)
 		List_SSEt.append(SSEt)
-		print X.shape
 	return [num_feat, List_SSE, List_SSEt]
 
 def plot_relationship(num_feat, List_SSE, List_SSEt, xaxis):
@@ -91,32 +87,15 @@ def plot_relationship(num_feat, List_SSE, List_SSEt, xaxis):
 	plt.figure(1)
 	plt.subplot(211)
 	plt.ylabel("SSE")
-	plt.plot(num_feat, List_SSE, 'ro')
+	plt.plot(num_feat, List_SSE, 'r')
 	plt.title("Training Data")
 	plt.subplot(212)
 	plt.xlabel(xaxis)
 	plt.ylabel("SSE")
-	plt.plot(num_feat, List_SSEt, 'bo')
+	plt.plot(num_feat, List_SSEt, 'b')
 	plt.title("Testing Data")
 	plt.show()
 	return 0				
-
-def plot_lambda_relationship(lambda_list, List_SSE, List_SSEt):
-
-	plt.figure(1)
-	plt.subplot(211)
-	plt.ylabel("SSE")
-	plt.plot(num_feat, List_SSE, 'ro')
-	plt.title("Training Data")
-	plt.subplot(212)
-	plt.xlabel("Value of lambda")
-	plt.ylabel("SSE")
-	plt.plot(num_feat, List_SSEt, 'bo')
-	plt.title("Testing Data")
-	plt.show()
-	return 0				
-
-
 
 
 def weight_vector_variant(X,Y,lamb):
@@ -162,55 +141,108 @@ def printMatrixE(a):
       print
    print 
 
+
+
+
 #####################################################################
 ################################# MAIN ##############################
 
-### SSE with dummy
+#######################################################
+print "\n\n######   Parts 1 & 2   ######"
 
-#load matrix with data and dummy
+# load matrix with training data and dummy variable
 [X,Y] = load_matrix("housing_train.txt")
-[Xt,Yt] = load_matrix("housing_test.txt")
-#get weight vector
+
+# get weight vector
 W = weight_vector(X,Y)
-Wt = weight_vector(Xt,Yt)
-#calculate sum square error
+
+# calculate sum square error using traning data
 E = sum_sq_err(W,X,Y)
+
+# print the calculated weight vector
+print "\nW = ", W
+
+
+
+#######################################################
+print "\n\n######     Parts 3     ######"
+
+# load matrix with test data and dummy variable
+[Xt,Yt] = load_matrix("housing_test.txt")
+
+# calculate SSE for testing data
 Et = sum_sq_err(W,Xt,Yt)
-#print sum square error
-print("Training Data With Dummy SSE: ", E)
-print("Test Data With Dummy SSE: ", Et)
+
+# print the SSE with dummy variable
+print "Traning Data With Dummy SSE: ", E
+print "Test Data With Dummy SSE: ", Et
 
 
 
-### SSE witout dummy
+########################################################
+print "\n\n######     Parts 4     ######"
 
-#remove dummy
+# remove dummy
 X_nd = no_dummy(X)
 Xt_nd = no_dummy(Xt)
-#get weight vector
+
+# get weight vector with no dummy
 W_nd = weight_vector(X_nd,Y)
-#calculate sum square error
+
+# calculate sum square error for no dummy
 E_nd = sum_sq_err(W_nd,X_nd,Y)
 Et_nd = sum_sq_err(W_nd,Xt_nd,Yt)
-#print sum square error
-print("Training Data Without Dummy SSE: ", E_nd)
-print("Test Data Without Dummy SSE: ", Et_nd)
+
+print "\nWeight Vector with no dummy"
+print "W = ", W
+
+# print SSEs for no dummy
+print "\nTraining Data Without Dummy SSE: ", E_nd
+print "Test Data Without Dummy SSE: ", Et_nd
 
 
+
+########################################################
+print "\n\n######     Parts 5     ######"
+
+added = 20
 
 ### adding features
-[num_feat, List_SSE, List_SSEt] = feature_relationships(10)
+[num_feat, List_SSE, List_SSEt] = feature_relationships(added)
+
+#plot
 #plot_relationship(num_feat, List_SSE, List_SSEt,"Number of Additonal Features")
-print num_feat
-print List_SSE
-print List_SSEt
+print "\nPlot output supressed, uncomment to plot"
 
-#### regression with lambda
-lambda_list = [0.01, 0.05, 0.1, 0.5, 1, 5]
+
+
+########################################################
+print "\n\n######     Parts 6     ######"
+
+# generate a list of lambdas to test
+lambda_list = np.arange(0,5,.01)
+
+# calculate SSE for every lambda in lambda_list
 [lambda_lsit, List_SSE, List_SSEt] = lambda_relationships(lambda_list)
-#plot_relationship(lambda_list, List_SSE, List_SSEt,"Value of Lambda")
-print lambda_list
-print List_SSE
-print List_SSEt
 
-printMatrixE(X_nd)
+# plot 
+#plot_relationship(lambda_list, List_SSE, List_SSEt,"Value of Lambda")
+print "\nPlot output supressed, uncomment to plot"
+
+
+
+########################################################
+print "\n\n######     Parts 7     ######"
+
+print "\nSee report"
+
+
+
+########################################################
+print "\n\n######     Parts 8     ######"
+
+print "\nSee report"
+
+
+print "\n\n\n\n"
+
