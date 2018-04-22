@@ -35,7 +35,8 @@ replacement files are formated the same way.
 ### Output
 
 The first output to the terminal is a demonstration of the results of adding 
-a dummy variable of all ones.
+a dummy variable of all ones. The error function we use to determine the accuracy 
+of the learing model is sum squared error (SSE).
 
 ```
 Training Data With Dummy SSE:  9561.19128998
@@ -48,41 +49,9 @@ training data but actually causes overfitting and therefore decreases the abilit
 of the model to predict the outcomes of the test set. 
 
 <br />
-<br />
 
-Now we will demonstrate the result of adding random variables 
+Now we will demonstrate the result of continuing to add random features to the data.
+We will continually add random features to the dataset and graph the number of added
+random features against the SSE. 
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
-
+![alt text](./readme-files/AddedFeatures-SSE.png)
