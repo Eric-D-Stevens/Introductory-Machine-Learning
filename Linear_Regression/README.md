@@ -34,6 +34,8 @@ replacement files are formated the same way.
 
 ### Output
 
+#### Adding Random Features
+
 The first output to the terminal is a demonstration of the results of adding 
 a dummy variable of all ones. The error function we use to determine the accuracy 
 of the learing model is sum squared error (SSE).
@@ -55,3 +57,30 @@ We will continually add random features to the dataset and graph the number of a
 random features against the SSE. 
 
 ![alt text](./readme-files/AddedFeatures-SSE.png)
+
+As we can see from the graph, adding aditional radom features allows the traning process
+to overfit the model to the training data resulting in a genearal decrease to in the 
+SSE of when applied to the training data. This overfitting, however results in sporatic 
+results with an upward trend in SSE when applied to the test set.
+
+#### Adding Hyper Parameter Lambda
+
+To reduce the overfitting problem in the linear regression model we add a hyper parameter 
+`lambda`. This punishes the model for adding large weight values. The result is a weight 
+vector that is more generalized and therfore does not overfit to the training data as much
+as it otherwise might.
+
+<br /> 
+
+To demonstrate this we plot increasing values of lambda with respect to the training and 
+testing SSEs.
+
+![alt_text](./readme-files/Lambdas-SSE.png)
+
+As we can see, the training data has an increas in SSE as we increase the value of lambda.
+This is to be expected as we are preventing the dramatic flexing that the weight vector has 
+has a tencancy to take to fit the training data. The testing SSE visably takes a dip before 
+rising back up. This bottoming out of the testing SSE shows where the best value of lambda 
+is to prevent overfitting to the training data while at the same time providing enought 
+flexibility in the weight vector to be an effictive model.
+
