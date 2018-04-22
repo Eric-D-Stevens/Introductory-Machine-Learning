@@ -5,46 +5,26 @@ to real estate data in order to predict real estate value. The method is applied
 the Carnegie Mellon Boston housing dataset. The data and the infomation about the
 features can be found [here]( http://lib.stat.cmu.edu/datasets/boston).
 
-## Getting Started
+## Usage
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This project relies on Python 3.6. The only library that needs to be installed to 
+run this script is the NumPy library. The data is included in the repository. This 
+data could be replaced by another dataset with the same number of features and run
+ properly. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+To run this script you will need Python 3 and NumPy
+ system or using it for a little demo
+
+## Running and Output 
+
+### Running
+
+To run this file, get into the 'Linear_Regression' directory and enter
 
 ```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+Python3 HousingPriceRegression.py
 ```
 
 ### And coding style tests
