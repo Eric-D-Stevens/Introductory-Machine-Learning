@@ -1,9 +1,9 @@
 # Simple Linear Regression 
 
-This project is a very simple demonstration of applying 
-linear regression 
-to real estate data in order to predict the the price
-of a new asset.
+This project is a very simple demonstration  of the application of linear regression 
+to real estate data in order to predict real estate value. The method is applied to 
+the Carnegie Mellon Boston housing dataset. The data and the infomation about the
+features can be found [here]( http://lib.stat.cmu.edu/datasets/boston).
 
 ## Getting Started
 
