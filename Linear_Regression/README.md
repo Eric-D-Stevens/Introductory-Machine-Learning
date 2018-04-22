@@ -1,6 +1,8 @@
 # Simple Linear Regression 
 
-This project is a very simple demonstration of applying linear regression to real estate data in order to predict the the price
+This project is a very simple demonstration of applying 
+linear regression 
+to real estate data in order to predict the the price
 of a new asset.
 
 ## Getting Started
