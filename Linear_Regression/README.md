@@ -7,14 +7,14 @@ features can be found [here]( http://lib.stat.cmu.edu/datasets/boston).
 
 ## Usage
 
-This project relies on Python 3.6. The only library that needs to be installed to 
+This project was built using Python 2.7.14. The only library that needs to be installed to 
 run this script is the NumPy library. The data is included in the repository. This 
 data could be replaced by another dataset with the same number of features and run
  properly. 
 
 ### Prerequisites
 
-To run this script you will need Python 3 and NumPy
+To run this script you will need Python 2.7 and NumPy
  system or using it for a little demo
 
 ## Running and Output 
@@ -24,15 +24,19 @@ To run this script you will need Python 3 and NumPy
 To run this file, get into the 'Linear_Regression' directory and enter
 
 ```
-Python3 HousingPriceRegression.py
+Python2.7 HousingPriceRegression.py
 ```
 
-### And coding style tests
+### Output
 
-Explain what these tests test and why
+The first output to the terminal is a demonstration of the results of adding 
+a dummy variable of all ones.
 
 ```
-Give an example
+Training Data With Dummy SSE:  9561.19128998
+Test Data With Dummy SSE:  1675.23096595
+Training Data Without Dummy SSE:  12467.4299083
+Test Data Without Dummy SSE:  1589.74933546
 ```
 
 ## Deployment
