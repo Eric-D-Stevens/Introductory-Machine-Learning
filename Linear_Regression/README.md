@@ -1,6 +1,7 @@
-# Project Title
+# Simple Linear Regression 
 
-One Paragraph of project description goes here
+This project is a very simple demonstration of applying linear regression to real estate data in order to predict the the price
+of a new asset.
 
 ## Getting Started
 
