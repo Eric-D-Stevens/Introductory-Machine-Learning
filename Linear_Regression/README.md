@@ -34,7 +34,7 @@ replacement files are formated the same way.
 
 ### Output
 
-#### Adding Random Features
+#### Single Dummy Feature Relationship
 
 The first output to the terminal is a demonstration of the results of adding 
 a dummy variable of all ones. The error function we use to determine the accuracy 
@@ -50,7 +50,7 @@ As we can see, the addition of the dummy variable increases the accuracy of the
 training data but actually causes overfitting and therefore decreases the ability
 of the model to predict the outcomes of the test set. 
 
-<br />
+#### Adding Random Features
 
 Now we will demonstrate the result of continuing to add random features to the data.
 We will continually add random features to the dataset and graph the number of added
